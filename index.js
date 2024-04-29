@@ -1,6 +1,6 @@
 import { configDotenv } from "dotenv";
-import connectToDB from './config/db_config/db.js'
-import app from "./app.js";
+import connectToDB from './src/config/db_config/db.js'
+import app from "./src/app.js";
 
 configDotenv()
 const PORT=process.env.PORT||5300;
@@ -12,4 +12,3 @@ connectToDB().then(()=>{
     console.log('mongodb connection error',error);
     throw error;
 })
-// export default 
