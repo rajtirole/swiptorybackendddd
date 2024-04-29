@@ -187,6 +187,11 @@ const postSchema = new mongoose.Schema(
       ref: "User",
       default: [],
     },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      require:true
+    },
   },
   { timestamps: true }
 );

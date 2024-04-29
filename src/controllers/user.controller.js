@@ -177,11 +177,10 @@ const changePassword = asyncHandler(async (req, res) => {
 const getUser = asyncHandler(async (req, res) => {
   try {
     const user = req.user;
-    console.log(user);
     if (!user) {
       throw new ApiError(400, "user not found");
     }
-    return res.status(200).json(new ApiResponse(200, {id:user._id,userName:user.userName,created:user.createdAt,updated:user.updatedAt}, "user get success"));
+    return res.status(200).json(new ApiResponse(200, {id:user._id,userName:user.userName,created:user.createdAt,updated:user.updatedAt}, "succesfully get user"));
   } catch (error) {
     throw new ApiError(error.statusCode||500,error.message, error.error);
 
